@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<instructions>
+    <task id="1">
+        <action>navigate</action>
+        <url>https://www.roboform.com/filling-test-all-fields</url>
+    </task>
+    <task id="2">
+        <action>update</action>
+        <selector>input[name="01___title"]</selector>
+        <value>Mr</value>
+    </task>
+    <task id="3">
+        <action>update</action>
+        <selector>input[name="02frstname"]</selector>
+        <value>Pawan</value>
+    </task>
+	<task id="4">
+        <action>update</action>
+        <selector>input[name="03middle_i"]</selector>
+        <value>Yadav</value>
+    </task>
+	<task id="5"> <!-- Use a unique ID, e.g., 6 or 7 depending on existing tasks -->
+        <action>selectByText</action>
+        <selector>select[name="40cc__type"]</selector>
+        <value>Master Card</value> <!-- This is the visible text you want to select -->
+    </task>
+	<task id="6"> <!-- Use a unique ID, e.g., 6 or 7 depending on existing tasks -->
+        <action>selectByText</action>
+        <selector>select[name="42ccexp_mm"]</selector>
+        <value>07</value> <!-- This is the visible text you want to select -->
+    </task>
+	<task id="7"> <!-- Use a unique ID, e.g., 6 or 7 depending on existing tasks -->
+        <action>selectByText</action>
+        <selector>select[name="43ccexp_yy"]</selector>
+        <value>2020</value> <!-- This is the visible text you want to select -->
+    </task>
+	<!--
+    <task id="5">
+        <action>click</action>
+        <selector>input[type="reset"]</selector>
+    </task>
+	-->
+    <task id="8">
+        <action>scrape</action>
+        <selector>a.profile-link</selector>
+        <scrapeAttribute>href</scrapeAttribute>
+    </task>
+</instructions>
