@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>XML Processor</title>
+    <style>
+        body { font-family: sans-serif; padding: 10px; width: 350px; }
+        h1, h2 { color: #333; }
+        .section { margin-bottom: 20px; border-bottom: 1px solid #eee; padding-bottom: 15px; }
+        label { display: block; margin-bottom: 5px; font-weight: bold; }
+        input[type="file"], input[type="text"], select {
+            width: calc(100% - 22px);
+            padding: 8px;
+            margin-bottom: 10px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+        }
+        button {
+            padding: 8px 15px;
+            background-color: #007bff;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            margin-right: 5px;
+        }
+        button:hover {
+            background-color: #0056b3;
+        }
+        button.action-btn { background-color: #28a745; }
+        button.action-btn:hover { background-color: #218838; }
+        button.delete-btn { background-color: #dc3545; }
+        button.delete-btn:hover { background-color: #c82333; }
+        #status { margin-top: 10px; font-weight: bold; color: #333; }
+        .error { color: red; }
+        .success { color: green; }
+        #storedXmlList {
+            list-style: none;
+            padding: 0;
+            margin-top: 10px;
+        }
+        #storedXmlList li {
+            background-color: #f8f9fa;
+            border: 1px solid #e9ecef;
+            padding: 8px;
+            margin-bottom: 5px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        #storedXmlList li span {
+            flex-grow: 1;
+        }
+    </style>
+</head>
+<body>
+    <h1>XML Processor</h1>
+
+    <div class="section">
+        <h2>Load XML from File</h2>
+        <input type="file" id="xmlFileInput" accept=".xml">
+        <button id="processFromFile" class="action-btn">Process from File</button>
+    </div>
+
+    <div class="section">
+        <h2>Save XML to Storage</h2>
+        <label for="saveNameInput">Name for XML:</label>
+        <input type="text" id="saveNameInput" placeholder="Enter a name for this XML">
+        <button id="saveXmlToStorage">Save Current XML</button>
+        <span id="saveStatus" class="status"></span>
+    </div>
+
+    <div class="section">
+        <h2>Load from Stored XML</h2>
+        <label for="storedXmlSelect">Select Stored XML:</label>
+        <select id="storedXmlSelect">
+            <option value="">-- Select a configuration --</option>
+        </select>
+        <button id="loadXmlFromStorage">Load & Process</button>
+        <button id="deleteSelectedXml" class="delete-btn">Delete Selected</button>
+    </div>
+
+    <div id="status"></div>
+
+    <script src="popup.js"></script>
+</body>
+</html>
